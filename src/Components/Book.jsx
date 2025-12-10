@@ -4,19 +4,7 @@ import { Link } from "react-router";
 const Book = ({ book }) => {
   //   console.log(book);
 
-  const {
-    image,
-    author,
-    bookId,
-    bookName,
-    category,
-    publisher,
-    rating,
-    review,
-    tags,
-    totalPages,
-    yearOfPublishing,
-  } = book;
+  const { image, author, bookId, bookName, category, rating, tags } = book;
   return (
     <Link
       to={`book-details/${bookId}`}

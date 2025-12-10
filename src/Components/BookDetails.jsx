@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router";
+import { addToLocalStorage } from "../Utilities/localstorage";
 
 const BookDetails = () => {
   const bookDetails = useLoaderData();
+  // const [readList, setReadList] = useState([]);
   //   console.log(bookDetails);
   const { id } = useParams();
   //   console.log(id);
@@ -10,16 +12,27 @@ const BookDetails = () => {
   const {
     image,
     author,
-    bookId,
     bookName,
     category,
     publisher,
     rating,
     review,
     tags,
+    bookId,
     totalPages,
     yearOfPublishing,
   } = details;
+
+  const handleAddToReadList = (id) => {
+    // console.log(id, "readlist");
+    addToLocalStorage("read-list", id);
+    // getFromLocalStorage("readList");
+  };
+  // console.log(readList);
+
+  // const addToWishList = () => {
+  //   console.log("Wishlist");
+  // };
 
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800 ">
@@ -46,14 +59,14 @@ const BookDetails = () => {
           className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
           bis_skin_checked="1"
         >
-          <h1 className="text-3xl text-center font-bold leading-none sm:text-6xl">
+          <h1 className="text-3xl text-center md:text-left font-bold leading-none sm:text-6xl">
             {bookName}
           </h1>
           {/* author name */}
-          <span className="py-3">By: {author}</span>
+          <span className="py-3 font-sans">By: {author}</span>
           {/* border */}
           <div className="w-full border-t border-gray-300"></div>
-          <span className="py-4">{category}</span>
+          <span className="py-4 font-sans">{category}</span>
           {/* border */}
           <div className="w-full border-t border-gray-300"></div>
 
@@ -63,6 +76,7 @@ const BookDetails = () => {
             <span className="font-sans">{review}</span>
           </p>
           {/* tags */}
+
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <span className="font-bold font-sans">Tags: </span>
             {tags.map((tag, index) => (
@@ -105,12 +119,18 @@ const BookDetails = () => {
             className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start font-sans"
             bis_skin_checked="1"
           >
-            <Link className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50">
+            {/* read list button */}
+            <button
+              onClick={() => handleAddToReadList(bookId)}
+              className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50 cursor-pointer"
+            >
               Read
-            </Link>
-            <Link className="px-8 py-3 text-lg font-semibold bg-c-secondary border rounded dark:border-gray-800">
+            </button>
+
+            {/* wishlist button */}
+            <button className="px-8 py-3 text-lg font-semibold bg-c-secondary border rounded dark:border-gray-800 cursor-pointer">
               Wishlist
-            </Link>
+            </button>
           </div>
         </div>
       </div>
