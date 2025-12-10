@@ -1,9 +1,8 @@
-import React from "react";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const Book = ({ book }) => {
-  console.log(book);
+  //   console.log(book);
 
   const {
     image,
@@ -20,15 +19,17 @@ const Book = ({ book }) => {
   } = book;
   return (
     <Link
-      to={`/${bookId}`}
+      to={`book-details/${bookId}`}
       className="p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900"
       bis_skin_checked="1"
     >
-      <img
-        src={image}
-        alt=""
-        className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
-      />
+      <figure className="bg-[#f3f3f3] rounded-md ">
+        <img
+          src={image}
+          alt=""
+          className="object-cover object-center w-2/3 m-auto p-4 rounded-md h-72 dark:bg-gray-500"
+        />
+      </figure>
 
       <div className="mt-6 mb-2" bis_skin_checked="1">
         <div className="flex justify-between mb-4">

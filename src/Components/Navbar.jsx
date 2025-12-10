@@ -70,7 +70,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[18px ]">{navList}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end flex-col md:flex-row items-center">
         <a className="btn bg-c-primary">Sign in</a>
         <a className="btn ml-3 bg-c-secondary">Sign up</a>
       </div>
