@@ -4,8 +4,8 @@ const Banner = () => {
   return (
     <div className="bg-[#f3f3f3] rounded-xl mt-10  ">
       {/* heading and button section */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row pl-16 items-center">
-        <section className="md:w-1/2 text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:pl-16 pl-0 items-center">
+        <section className="md:w-1/2  text-center md:text-left">
           <h1 className="text-3xl text-black md:text-5xl mb-6 font-bold">
             Books to freshen up your bookshelf
           </h1>
@@ -14,11 +14,11 @@ const Banner = () => {
           </button>
         </section>
         {/* image section */}
-        <section>
+        <section className=" ">
           <img
             src={banner}
             alt="books"
-            className="object-contain "
+            className="object-cover w-full max-w-96 md:max-w-fit "
             loading="lazy"
           />
         </section>

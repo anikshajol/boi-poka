@@ -22,7 +22,7 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            isActive ? "btn border border-[#23be0a]" : ""
+            isActive ? "btn border border-[#23be0a] font-sans" : "font-sans"
           }
         >
           Home
@@ -31,7 +31,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "btn border border-[#23be0a]" : ""
+            isActive ? "btn border border-[#23be0a] font-sans" : " font-sans"
           }
           to={"/listed-books"}
         >
@@ -41,7 +41,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "btn border border-[#23be0a]" : ""
+            isActive ? "btn border border-[#23be0a] font-sans" : " font-sans"
           }
           to={"/read-pages"}
         >
@@ -68,7 +68,7 @@ const Navbar = () => {
         <a className="text-[28px] font-bold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-[18px]">{navList}</ul>
+        <ul className="menu menu-horizontal px-1 text-[18px ]">{navList}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn bg-c-primary">Sign in</a>
