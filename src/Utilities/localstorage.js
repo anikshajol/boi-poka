@@ -21,6 +21,7 @@ const addToLocalStorage = (name, id) => {
 
   if (!found) {
     savedToLocalStorage(name, [...storedItems, id]);
+    toast.success("Successfully Added");
   } else {
     toast.error("Already added!");
   }

@@ -21,6 +21,7 @@ const Tabs = () => {
       </Link>
 
       <Link
+        to={"wishlist"}
         onClick={() => setIndex(1)}
         className={`flex items-center shrink-0 px-5 py-3 space-x-2 ${
           index === 1
